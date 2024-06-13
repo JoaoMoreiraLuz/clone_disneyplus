@@ -4,6 +4,8 @@
 @use 'plans';
 @use 'available-devices';
 @use 'faq';
+@use 'footer';
+@use 'header';
 
 @font-face {
     font-family: Avenir;
@@ -79,16 +81,43 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: var.$textColorSec;
-    background-color: #6421ff;
+    background-color: var.$buttonBgColorPri;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid var.$buttonBgColorPri;
+    
+    &:hover {
+        background-color: lighten(var.$buttonBgColorPri, 3%);
+    }
+
+    &--secondary {
+        background-color: var.$buttonBgColorSec;
+        border-color: var.$buttonBgColorSec;
+
+        &:hover {
+            background-color: lighten(var.$buttonBgColorSec, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(var.$buttonBgColorDark, $alpha: 0.8);
+        border-color: var.$textColorSec;
+
+        &:hover {
+            background-color: var.$textColorSec;
+            color: var.$bgColor;
+        }
+    }
 }
 
 .image-text-section {
