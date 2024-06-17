@@ -8,6 +8,12 @@
         display: flex;
         justify-content: center;
 
+        @media (max-width: 768px) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
+
         &__button {
             color: var.$textColorSec;
             font-size: 20px;
@@ -22,6 +28,10 @@
                 border-color: var.$textColorSec;
             }
 
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+
             &:hover {
                 cursor: pointer;
             }
@@ -34,6 +44,10 @@
         display: none;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
+
+        @media(max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &--active {
             display: grid;
